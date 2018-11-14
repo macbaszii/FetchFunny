@@ -21,6 +21,7 @@ final class InstagramManagerImplementation: InstagramManager {
         static let clientID = "cc12b60bb0e341a7a956c2a7b1585d19"
         static let redirectURI = "http://www.shutterstock.com/g/macbaszii"
         static let responseType = "token"
+        static let obtainTokenKey = "com.instagram.token"
     }
 
     func autorizationEndpointURL() -> URL {

@@ -19,7 +19,7 @@ final class KeychainManagerImplementation: KeychainManager {
     }
 
     enum KeychainManagerError: Error {
-        case itemNotFound
+        case itemNotFound(forKey: String)
         case setItemFailed(errorMessage: String)
     }
 
@@ -31,7 +31,7 @@ final class KeychainManagerImplementation: KeychainManager {
 
     func getItem(for key: String) throws -> String {
         guard let obtainedItem = keychain[string: key] else {
-            throw KeychainManagerError.itemNotFound
+            throw KeychainManagerError.itemNotFound(forKey: key)
         }
 
         return obtainedItem

@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  FetchFunny
 //
-//  Created by Anoochitarom, Kiattisak (Agoda) on 14/11/2561 BE.
-//  Copyright © 2561 Anoochitarom, Kiattisak (Agoda). All rights reserved.
+//  Created by Kiattisak Anoochitarom on 14/11/2561 BE.
+//  Copyright © 2018 Kiattisak A. All rights reserved.
 //
 
 import UIKit
@@ -16,15 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        self.window = UIWindow(frame: UIScreen.main.bounds)
+        window = UIWindow(frame: UIScreen.main.bounds)
 
-        let photosViewController = PhotosViewModuleBuilder().build()
-        let navigationController = UINavigationController(
-            rootViewController: photosViewController
+        let helper = ApplicationDelegateHelperImplementation(
+            mainWindow: window,
+            rootRouter: RootRouterImplementation(mainWindow: window)
         )
 
-        self.window?.rootViewController = navigationController
-        self.window?.makeKeyAndVisible()
+        if helper.instagramTokenAlreadyExist() {
+            helper.rootToPhotosScreen()
+        } else {
+            helper.rootToLoginScreen()
+        }
+
+        window?.makeKeyAndVisible()
 
         return true
     }
