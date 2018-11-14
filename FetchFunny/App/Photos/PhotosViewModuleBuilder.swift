@@ -14,10 +14,24 @@ protocol PhotosViewModuleBuildable {
 
 final class PhotosViewModuleBuilder: PhotosViewModuleBuildable {
     func build() -> UIViewController {
-        guard let photosViewController = try? PhotosViewController.loadFromNib() else {
+        guard let viewController = try? PhotosViewController.loadFromNib() else {
             fatalError("Could not load PhotosViewController from nib file")
         }
 
-        return photosViewController
+        let presenter = PhotosViewPresenter()
+        let interactor = PhotosViewInteractor()
+        let router = PhotosViewRouter()
+
+        viewController.output = presenter
+
+        presenter.view = viewController
+        presenter.interactor = interactor
+        presenter.router = router
+
+        interactor.output = presenter
+
+        router.viewController = viewController
+
+        return viewController
     }
 }

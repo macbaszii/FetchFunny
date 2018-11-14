@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol PhotosViewInput {
+protocol PhotosViewInput: class {
     func showPhotos(with photos: [Photo])
     func showLoadingView()
     func hideLoadingView()
@@ -16,15 +16,16 @@ protocol PhotosViewInput {
 
 protocol PhotosViewOutput {
     func viewIsReady()
+    func fetchPhotos(with string: String)
     func tapPhoto(at indexPath: IndexPath)
     func refreshPhotos()
 }
 
-protocol PhotosViewInteractorOutput {
+protocol PhotosViewInteractorInput {
     func loadPhotos(with string: String)
 }
 
-protocol PhotosViewInteractorInput {
+protocol PhotosViewInteractorOutput: class {
     func didReceivePhotos(photos: [Photo])
 }
 

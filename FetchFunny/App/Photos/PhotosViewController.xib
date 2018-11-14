@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotosViewController" customModule="FetchFunny" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="wbf-nx-IIF" id="ek2-Pw-YUl"/>
+                <outlet property="loadingView" destination="4NF-29-aZC" id="OM4-db-iBi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,17 +22,41 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GgF-DL-Pi0">
-                    <rect key="frame" x="143" y="323" width="89" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="wbf-nx-IIF">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EGW-mG-jzD">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4NF-29-aZC">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Uti-Db-A2Q">
+                            <rect key="frame" x="169" y="305" width="37" height="37"/>
+                            <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Uti-Db-A2Q" firstAttribute="centerX" secondItem="4NF-29-aZC" secondAttribute="centerX" id="2lk-Zy-2qZ"/>
+                        <constraint firstItem="Uti-Db-A2Q" firstAttribute="centerY" secondItem="4NF-29-aZC" secondAttribute="centerY" id="mg2-xS-Qd5"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="GgF-DL-Pi0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3YE-pC-mUp"/>
-                <constraint firstItem="GgF-DL-Pi0" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="L45-Ds-OJ7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wbf-nx-IIF" secondAttribute="bottom" id="3tK-my-GuJ"/>
+                <constraint firstItem="wbf-nx-IIF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="BA6-rf-OI5"/>
+                <constraint firstItem="4NF-29-aZC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Gpe-3P-Woq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4NF-29-aZC" secondAttribute="trailing" id="V0m-gQ-4P5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wbf-nx-IIF" secondAttribute="trailing" id="d23-YO-nVI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4NF-29-aZC" secondAttribute="bottom" id="daI-YM-OdF"/>
+                <constraint firstItem="4NF-29-aZC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="qnU-T3-Fo0"/>
+                <constraint firstItem="wbf-nx-IIF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="xdr-Kx-MVo"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
