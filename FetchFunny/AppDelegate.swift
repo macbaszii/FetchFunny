@@ -17,10 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        guard let photosViewController = try? PhotosViewController.loadFromNib() else {
-            fatalError("Could not load PhotosViewController from nib file")
-        }
 
+        let photosViewController = PhotosViewModuleBuilder().build()
         let navigationController = UINavigationController(
             rootViewController: photosViewController
         )

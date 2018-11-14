@@ -12,6 +12,7 @@
 		0C05FEE1219C613B001D4F49 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C05FEE0219C613B001D4F49 /* NibLoadable.swift */; };
 		0C05FEE3219C61EF001D4F49 /* PhotosViewModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C05FEE2219C61EF001D4F49 /* PhotosViewModule.swift */; };
 		0C05FEE6219C63A1001D4F49 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C05FEE5219C63A1001D4F49 /* Photo.swift */; };
+		0C05FEE8219C6C4D001D4F49 /* PhotosViewModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C05FEE7219C6C4D001D4F49 /* PhotosViewModuleBuilder.swift */; };
 		0C431271219C03440016EF56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C431270219C03440016EF56 /* AppDelegate.swift */; };
 		0C431278219C03460016EF56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C431277219C03460016EF56 /* Assets.xcassets */; };
 		0C43127B219C03460016EF56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C431279219C03460016EF56 /* LaunchScreen.storyboard */; };
@@ -33,6 +34,7 @@
 		0C05FEE0219C613B001D4F49 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		0C05FEE2219C61EF001D4F49 /* PhotosViewModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewModule.swift; sourceTree = "<group>"; };
 		0C05FEE5219C63A1001D4F49 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		0C05FEE7219C6C4D001D4F49 /* PhotosViewModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewModuleBuilder.swift; sourceTree = "<group>"; };
 		0C43126D219C03440016EF56 /* FetchFunny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchFunny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C431270219C03440016EF56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C431277219C03460016EF56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				0C05FEE2219C61EF001D4F49 /* PhotosViewModule.swift */,
+				0C05FEE7219C6C4D001D4F49 /* PhotosViewModuleBuilder.swift */,
 				0C05FE54219C5942001D4F49 /* PhotosViewController.swift */,
 				0C05FE55219C5942001D4F49 /* PhotosViewController.xib */,
 			);
@@ -246,6 +249,7 @@
 				0C05FEE1219C613B001D4F49 /* NibLoadable.swift in Sources */,
 				0C431271219C03440016EF56 /* AppDelegate.swift in Sources */,
 				0C05FE56219C5942001D4F49 /* PhotosViewController.swift in Sources */,
+				0C05FEE8219C6C4D001D4F49 /* PhotosViewModuleBuilder.swift in Sources */,
 				0C05FEE3219C61EF001D4F49 /* PhotosViewModule.swift in Sources */,
 				0C05FEE6219C63A1001D4F49 /* Photo.swift in Sources */,
 			);
