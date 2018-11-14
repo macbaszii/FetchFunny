@@ -22,13 +22,16 @@ protocol PhotosViewOutput {
 }
 
 protocol PhotosViewInteractorInput {
+    func authorizationIfNeeded()
     func loadPhotos(with string: String)
 }
 
 protocol PhotosViewInteractorOutput: class {
+    func didReceiveAuthorizationURL(_ url: URL)
     func didReceivePhotos(photos: [Photo])
 }
 
 protocol PhotosViewRouterInput {
+    func presentInstagramAuthorizationWebView(with url: URL)
     func navigateToPhotoDetails(with id: Int64)
 }

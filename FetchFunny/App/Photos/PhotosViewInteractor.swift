@@ -11,6 +11,16 @@ import Foundation
 final class PhotosViewInteractor: PhotosViewInteractorInput {
 
     weak var output: PhotosViewInteractorOutput?
+    private let instagramManager: InstagramManager
+
+    init(instagramManager: InstagramManager) {
+        self.instagramManager = instagramManager
+    }
+
+    func authorizationIfNeeded() {
+        let authorizationURL = instagramManager.autorizationEndpointURL()
+        output?.didReceiveAuthorizationURL(authorizationURL)
+    }
 
     func loadPhotos(with string: String) {
         // fetch photos

@@ -18,8 +18,12 @@ final class PhotosViewModuleBuilder: PhotosViewModuleBuildable {
             fatalError("Could not load PhotosViewController from nib file")
         }
 
+        let instagramManager = InstagramManagerImplementation()
+
         let presenter = PhotosViewPresenter()
-        let interactor = PhotosViewInteractor()
+        let interactor = PhotosViewInteractor(
+            instagramManager: instagramManager
+        )
         let router = PhotosViewRouter()
 
         viewController.output = presenter
