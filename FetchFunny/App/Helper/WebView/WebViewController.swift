@@ -9,8 +9,14 @@
 import UIKit
 import WebKit
 
-final class InstagramAuthorizationViewController: UIViewController, NibLoadable {
-    typealias NibRootType = InstagramAuthorizationViewController
+protocol WebViewControllerDelegate: class {
+    func didReceiveResultURL(_ url: URL)
+}
+
+final class WebViewController: UIViewController, NibLoadable {
+    typealias NibRootType = WebViewController
+
+    weak var delegate: WebViewControllerDelegate?
 
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var dismissButton: UIBarButtonItem!
@@ -22,6 +28,7 @@ final class InstagramAuthorizationViewController: UIViewController, NibLoadable 
 
         // TODO: Handle this optional, please
         let urlRequest = URLRequest(url: url!)
+        webView.navigationDelegate = self
         webView.load(urlRequest)
     }
 
@@ -30,10 +37,10 @@ final class InstagramAuthorizationViewController: UIViewController, NibLoadable 
     }
 }
 
-// MARK: - WKNavigationDelegate
-extension InstagramAuthorizationViewController: WKNavigationDelegate {
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-
+extension WebViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        guard let url = webView.url else { return }
+        delegate?.didReceiveResultURL(url)
     }
-}
 
+}

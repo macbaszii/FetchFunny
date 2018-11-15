@@ -6,12 +6,37 @@
 //  Copyright © 2018 Kiattisak A. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-final class InstagramLoginPresenter: InstagramLoginViewOutput {
+final class InstagramLoginPresenter: InstagramLoginViewOutput,
+                                     InstagramLoginInteractorOutput {
+    var view: InstagramLoginViewInput?
+    var router: InstagramLoginRouterInput?
+    var interactor: InstagramLoginInteractorInput?
+
     func viewIsReady() {
         
     }
 
-    
+    func loginButtonTapped() {
+        interactor?.createAuthoirizationURLForInstagram()
+    }
+
+    func didReceiveAuthorizationURL(_ url: URL) {
+        router?.presentAuthorizationScreen(
+            with: url,
+            webViewDelegate: self
+        )
+    }
+
+    func didStoreAccessToken() {
+        guard let application = UIApplication.shared.delegate as? AppDelegate else { return }
+        application.applicationDelegateHelper?.rootToPhotosScreen()
+    }
+}
+
+extension InstagramLoginPresenter: WebViewControllerDelegate {
+    func didReceiveResultURL(_ url: URL) {
+        interactor?.storeAccessToken(from: url)
+    }
 }

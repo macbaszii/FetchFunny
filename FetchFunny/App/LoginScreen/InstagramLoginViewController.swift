@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InstagramLoginViewController: UIViewController, NibLoadable {
+class InstagramLoginViewController: UIViewController, NibLoadable, InstagramLoginViewInput {
     typealias NibRootType = InstagramLoginViewController
 
     @IBOutlet weak var loginButton: UIButton!
@@ -21,6 +21,6 @@ class InstagramLoginViewController: UIViewController, NibLoadable {
     }
 
     @IBAction func loginButtonTapped(_ button: UIButton) {
-
+        output?.loginButtonTapped()
     }
 }

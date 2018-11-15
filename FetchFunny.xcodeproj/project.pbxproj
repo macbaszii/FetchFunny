@@ -17,9 +17,9 @@
 		0C05FEEC219C6E48001D4F49 /* PhotosViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C05FEEB219C6E48001D4F49 /* PhotosViewInteractor.swift */; };
 		0C05FEEE219C6E54001D4F49 /* PhotosViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C05FEED219C6E54001D4F49 /* PhotosViewRouter.swift */; };
 		0C05FEF1219C7CC9001D4F49 /* InstagramAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C05FEF0219C7CC9001D4F49 /* InstagramAPIManager.swift */; };
-		0C05FEF4219C82C4001D4F49 /* InstagramAuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C05FEF2219C82C4001D4F49 /* InstagramAuthorizationViewController.swift */; };
-		0C05FEF5219C82C4001D4F49 /* InstagramAuthorizationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C05FEF3219C82C4001D4F49 /* InstagramAuthorizationViewController.xib */; };
-		0C05FEF8219C848C001D4F49 /* InstagramAuthorizationScreenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C05FEF7219C848C001D4F49 /* InstagramAuthorizationScreenBuilder.swift */; };
+		0C05FEF4219C82C4001D4F49 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C05FEF2219C82C4001D4F49 /* WebViewController.swift */; };
+		0C05FEF5219C82C4001D4F49 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C05FEF3219C82C4001D4F49 /* WebViewController.xib */; };
+		0C05FEF8219C848C001D4F49 /* WebViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C05FEF7219C848C001D4F49 /* WebViewControllerBuilder.swift */; };
 		0C05FEFC219C8D36001D4F49 /* InstagramLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C05FEFA219C8D36001D4F49 /* InstagramLoginViewController.swift */; };
 		0C05FEFD219C8D36001D4F49 /* InstagramLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C05FEFB219C8D36001D4F49 /* InstagramLoginViewController.xib */; };
 		0C05FEFF219C8D51001D4F49 /* InstagramLoginScreenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C05FEFE219C8D51001D4F49 /* InstagramLoginScreenBuilder.swift */; };
@@ -29,6 +29,8 @@
 		0C05FF09219C9964001D4F49 /* ApplicationDelegateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C05FF08219C9964001D4F49 /* ApplicationDelegateHelper.swift */; };
 		0C05FF0B219C99EA001D4F49 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C05FF0A219C99EA001D4F49 /* RootRouter.swift */; };
 		0C05FF0D219C99F7001D4F49 /* RouteDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C05FF0C219C99F7001D4F49 /* RouteDispatcher.swift */; };
+		0C1F4AD8219DE4E80081F9C7 /* InstagramLoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1F4AD7219DE4E80081F9C7 /* InstagramLoginRouter.swift */; };
+		0C1F4ADA219DE61A0081F9C7 /* InstagramLoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1F4AD9219DE61A0081F9C7 /* InstagramLoginInteractor.swift */; };
 		0C431271219C03440016EF56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C431270219C03440016EF56 /* AppDelegate.swift */; };
 		0C431278219C03460016EF56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C431277219C03460016EF56 /* Assets.xcassets */; };
 		0C43127B219C03460016EF56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C431279219C03460016EF56 /* LaunchScreen.storyboard */; };
@@ -56,9 +58,9 @@
 		0C05FEEB219C6E48001D4F49 /* PhotosViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewInteractor.swift; sourceTree = "<group>"; };
 		0C05FEED219C6E54001D4F49 /* PhotosViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewRouter.swift; sourceTree = "<group>"; };
 		0C05FEF0219C7CC9001D4F49 /* InstagramAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramAPIManager.swift; sourceTree = "<group>"; };
-		0C05FEF2219C82C4001D4F49 /* InstagramAuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramAuthorizationViewController.swift; sourceTree = "<group>"; };
-		0C05FEF3219C82C4001D4F49 /* InstagramAuthorizationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstagramAuthorizationViewController.xib; sourceTree = "<group>"; };
-		0C05FEF7219C848C001D4F49 /* InstagramAuthorizationScreenBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramAuthorizationScreenBuilder.swift; sourceTree = "<group>"; };
+		0C05FEF2219C82C4001D4F49 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		0C05FEF3219C82C4001D4F49 /* WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		0C05FEF7219C848C001D4F49 /* WebViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewControllerBuilder.swift; sourceTree = "<group>"; };
 		0C05FEFA219C8D36001D4F49 /* InstagramLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramLoginViewController.swift; sourceTree = "<group>"; };
 		0C05FEFB219C8D36001D4F49 /* InstagramLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstagramLoginViewController.xib; sourceTree = "<group>"; };
 		0C05FEFE219C8D51001D4F49 /* InstagramLoginScreenBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramLoginScreenBuilder.swift; sourceTree = "<group>"; };
@@ -68,6 +70,8 @@
 		0C05FF08219C9964001D4F49 /* ApplicationDelegateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegateHelper.swift; sourceTree = "<group>"; };
 		0C05FF0A219C99EA001D4F49 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		0C05FF0C219C99F7001D4F49 /* RouteDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDispatcher.swift; sourceTree = "<group>"; };
+		0C1F4AD7219DE4E80081F9C7 /* InstagramLoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramLoginRouter.swift; sourceTree = "<group>"; };
+		0C1F4AD9219DE61A0081F9C7 /* InstagramLoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramLoginInteractor.swift; sourceTree = "<group>"; };
 		0C43126D219C03440016EF56 /* FetchFunny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchFunny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C431270219C03440016EF56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C431277219C03460016EF56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 		0C05FEDF219C6121001D4F49 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				0C05FEF6219C8446001D4F49 /* WebView */,
 				0C05FEE0219C613B001D4F49 /* NibLoadable.swift */,
 				0C05FF06219C955C001D4F49 /* KeychainManager.swift */,
 			);
@@ -120,19 +125,18 @@
 			isa = PBXGroup;
 			children = (
 				0C05FEF0219C7CC9001D4F49 /* InstagramAPIManager.swift */,
-				0C05FEF6219C8446001D4F49 /* AuthorizationScreen */,
 			);
 			path = "Instagram API";
 			sourceTree = "<group>";
 		};
-		0C05FEF6219C8446001D4F49 /* AuthorizationScreen */ = {
+		0C05FEF6219C8446001D4F49 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
-				0C05FEF7219C848C001D4F49 /* InstagramAuthorizationScreenBuilder.swift */,
-				0C05FEF2219C82C4001D4F49 /* InstagramAuthorizationViewController.swift */,
-				0C05FEF3219C82C4001D4F49 /* InstagramAuthorizationViewController.xib */,
+				0C05FEF7219C848C001D4F49 /* WebViewControllerBuilder.swift */,
+				0C05FEF2219C82C4001D4F49 /* WebViewController.swift */,
+				0C05FEF3219C82C4001D4F49 /* WebViewController.xib */,
 			);
-			path = AuthorizationScreen;
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		0C05FEF9219C8CF7001D4F49 /* LoginScreen */ = {
@@ -141,6 +145,8 @@
 				0C05FF02219C8ED9001D4F49 /* InstagramLoginModule.swift */,
 				0C05FEFA219C8D36001D4F49 /* InstagramLoginViewController.swift */,
 				0C05FF00219C8E9A001D4F49 /* InstagramLoginPresenter.swift */,
+				0C1F4AD9219DE61A0081F9C7 /* InstagramLoginInteractor.swift */,
+				0C1F4AD7219DE4E80081F9C7 /* InstagramLoginRouter.swift */,
 				0C05FEFB219C8D36001D4F49 /* InstagramLoginViewController.xib */,
 				0C05FEFE219C8D51001D4F49 /* InstagramLoginScreenBuilder.swift */,
 			);
@@ -328,7 +334,7 @@
 				0C05FEFD219C8D36001D4F49 /* InstagramLoginViewController.xib in Resources */,
 				0C43127B219C03460016EF56 /* LaunchScreen.storyboard in Resources */,
 				0C431278219C03460016EF56 /* Assets.xcassets in Resources */,
-				0C05FEF5219C82C4001D4F49 /* InstagramAuthorizationViewController.xib in Resources */,
+				0C05FEF5219C82C4001D4F49 /* WebViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,8 +406,10 @@
 				0C05FEFF219C8D51001D4F49 /* InstagramLoginScreenBuilder.swift in Sources */,
 				0C05FEFC219C8D36001D4F49 /* InstagramLoginViewController.swift in Sources */,
 				0C431271219C03440016EF56 /* AppDelegate.swift in Sources */,
-				0C05FEF4219C82C4001D4F49 /* InstagramAuthorizationViewController.swift in Sources */,
+				0C1F4ADA219DE61A0081F9C7 /* InstagramLoginInteractor.swift in Sources */,
+				0C05FEF4219C82C4001D4F49 /* WebViewController.swift in Sources */,
 				0C05FF07219C955C001D4F49 /* KeychainManager.swift in Sources */,
+				0C1F4AD8219DE4E80081F9C7 /* InstagramLoginRouter.swift in Sources */,
 				0C05FF01219C8E9A001D4F49 /* InstagramLoginPresenter.swift in Sources */,
 				0C05FEEE219C6E54001D4F49 /* PhotosViewRouter.swift in Sources */,
 				0C05FE56219C5942001D4F49 /* PhotosViewController.swift in Sources */,
@@ -410,7 +418,7 @@
 				0C05FEE8219C6C4D001D4F49 /* PhotosViewModuleBuilder.swift in Sources */,
 				0C05FEE3219C61EF001D4F49 /* PhotosViewModule.swift in Sources */,
 				0C05FEEA219C6E3B001D4F49 /* PhotosViewPresenter.swift in Sources */,
-				0C05FEF8219C848C001D4F49 /* InstagramAuthorizationScreenBuilder.swift in Sources */,
+				0C05FEF8219C848C001D4F49 /* WebViewControllerBuilder.swift in Sources */,
 				0C05FEE6219C63A1001D4F49 /* Photo.swift in Sources */,
 				0C05FF09219C9964001D4F49 /* ApplicationDelegateHelper.swift in Sources */,
 			);

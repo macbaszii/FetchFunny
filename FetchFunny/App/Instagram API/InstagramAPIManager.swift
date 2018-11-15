@@ -10,6 +10,7 @@ import Foundation
 
 protocol InstagramManager {
     func autorizationEndpointURL() -> URL
+    func extractAccessToken(from url: URL) -> String
 }
 
 final class InstagramManagerImplementation: InstagramManager {
@@ -19,9 +20,10 @@ final class InstagramManagerImplementation: InstagramManager {
 
     struct Constants {
         static let clientID = "cc12b60bb0e341a7a956c2a7b1585d19"
-        static let redirectURI = "http://www.shutterstock.com/g/macbaszii"
+        static let redirectURI = "https://www.shutterstock.com/g/macbaszii"
         static let responseType = "token"
         static let obtainTokenKey = "com.instagram.token"
+        static let accessTokenPrefix = "access_token="
     }
 
     func autorizationEndpointURL() -> URL {
@@ -30,5 +32,15 @@ final class InstagramManagerImplementation: InstagramManager {
         }
 
         return autorizationURL
+    }
+
+    func extractAccessToken(from url: URL) -> String {
+        let accessTokenPart = url.absoluteString.split(separator: "#")[1]
+        let accessToken = accessTokenPart.replacingOccurrences(
+            of: Constants.accessTokenPrefix,
+            with: ""
+        )
+
+        return accessToken
     }
 }

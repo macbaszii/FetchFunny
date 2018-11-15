@@ -10,6 +10,29 @@ import UIKit
 
 final class InstagramLoginScreenBuilder {
     func build() -> UIViewController {
-        return UIViewController()
+        guard let viewController = try? InstagramLoginViewController.loadFromNib() else {
+            fatalError("Couldn't load InstagramLoginViewController from nib file")
+        }
+
+        let presenter = InstagramLoginPresenter()
+        let instagramManager = InstagramManagerImplementation()
+        let keychainManager = KeychainManagerImplementation()
+        let interactor = InstagramLoginInteractor(
+            instagramManager: instagramManager,
+            keychain: keychainManager
+        )
+        let router = InstagramLoginRouter()
+
+        viewController.output = presenter
+
+        presenter.view = viewController
+        presenter.interactor = interactor
+        presenter.router = router
+
+        interactor.output = presenter
+
+        router.viewController = viewController
+
+        return viewController
     }
 }

@@ -8,15 +8,17 @@
 
 import UIKit
 
-final class InstagramAuthorizationScreenBuilder {
-    func build(with url: URL) -> UIViewController {
-        guard let authorizationScreen = try? InstagramAuthorizationViewController.loadFromNib()
+final class WebViewControllerBuilder {
+    func build(with url: URL,
+               delegate: WebViewControllerDelegate?) -> UIViewController {
+        guard let viewController = try? WebViewController.loadFromNib()
             else {
                 fatalError("Couldn't load InstagramAuthorizationViewController from nib file")
         }
 
-        authorizationScreen.url = url
+        viewController.delegate = delegate
+        viewController.url = url
 
-        return authorizationScreen
+        return viewController
     }
 }

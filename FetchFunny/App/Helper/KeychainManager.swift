@@ -19,8 +19,8 @@ final class KeychainManagerImplementation: KeychainManager {
     }
 
     enum KeychainManagerError: Error {
-        case itemNotFound(forKey: String)
-        case setItemFailed(errorMessage: String)
+        case itemNotFound(message: String)
+        case setItemFailed(message: String)
     }
 
     let keychain: Keychain
@@ -31,7 +31,9 @@ final class KeychainManagerImplementation: KeychainManager {
 
     func getItem(for key: String) throws -> String {
         guard let obtainedItem = keychain[string: key] else {
-            throw KeychainManagerError.itemNotFound(forKey: key)
+            throw KeychainManagerError.itemNotFound(
+                message: "Item for this `Key: \(key)` is not found in Keychain"
+            )
         }
 
         return obtainedItem
@@ -40,10 +42,9 @@ final class KeychainManagerImplementation: KeychainManager {
     func setItem(_ item: String, for key: String) throws {
         do {
             try keychain.set(item, key: key)
-        } catch let error {
-            print("Couldn't set \(item) for \(key)")
+        } catch {
             throw KeychainManagerError.setItemFailed(
-                errorMessage: error.localizedDescription
+                message: "Coudln't set item to this `Key: \(key)`"
             )
         }
     }

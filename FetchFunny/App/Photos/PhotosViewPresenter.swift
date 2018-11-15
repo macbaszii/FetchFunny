@@ -15,7 +15,7 @@ final class PhotosViewPresenter: PhotosViewOutput {
     var router: PhotosViewRouterInput?
 
     func viewIsReady() {
-        interactor?.authorizationIfNeeded()
+        
     }
 
     func fetchPhotos(with string: String) {
@@ -33,10 +33,6 @@ final class PhotosViewPresenter: PhotosViewOutput {
 }
 
 extension PhotosViewPresenter: PhotosViewInteractorOutput {
-    func didReceiveAuthorizationURL(_ url: URL) {
-        router?.presentInstagramAuthorizationWebView(with: url)
-    }
-
     func didReceivePhotos(photos: [Photo]) {
         view?.showPhotos(with: photos)
     }

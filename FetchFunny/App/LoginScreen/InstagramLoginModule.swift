@@ -14,8 +14,20 @@ protocol InstagramLoginViewInput {
 
 protocol InstagramLoginViewOutput {
     func viewIsReady()
+    func loginButtonTapped()
+}
+
+protocol InstagramLoginInteractorInput {
+    func createAuthoirizationURLForInstagram()
+    func storeAccessToken(from url: URL)
+}
+
+protocol InstagramLoginInteractorOutput {
+    func didReceiveAuthorizationURL(_ url: URL)
+    func didStoreAccessToken()
 }
 
 protocol InstagramLoginRouterInput {
-    func presentAuthorizationScreen()
+    func presentAuthorizationScreen(with url: URL,
+                                    webViewDelegate: WebViewControllerDelegate)
 }

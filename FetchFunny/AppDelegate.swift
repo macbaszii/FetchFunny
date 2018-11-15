@@ -12,21 +12,21 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var applicationDelegateHelper: ApplicationDelegateHelper?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         window = UIWindow(frame: UIScreen.main.bounds)
 
-        let helper = ApplicationDelegateHelperImplementation(
+        applicationDelegateHelper = ApplicationDelegateHelperImplementation(
             mainWindow: window,
             rootRouter: RootRouterImplementation(mainWindow: window)
         )
 
-        if helper.instagramTokenAlreadyExist() {
-            helper.rootToPhotosScreen()
+        if applicationDelegateHelper?.instagramTokenAlreadyExist() == true {
+            applicationDelegateHelper?.rootToPhotosScreen()
         } else {
-            helper.rootToLoginScreen()
+            applicationDelegateHelper?.rootToLoginScreen()
         }
 
         window?.makeKeyAndVisible()
