@@ -8,8 +8,13 @@
 
 import Foundation
 
+protocol PhotosViewModuleInput {
+    func retrivedAccessTokenNotFound(with errorMessage: String)
+    
+}
+
 protocol PhotosViewInput: class {
-    func showPhotos(with photos: [Photo])
+    func showPhotos(with photos: [InstagramPhoto])
     func showLoadingView()
     func hideLoadingView()
 }
@@ -22,11 +27,12 @@ protocol PhotosViewOutput {
 }
 
 protocol PhotosViewInteractorInput {
+    func loadMyPhotos()
     func loadPhotos(with string: String)
 }
 
 protocol PhotosViewInteractorOutput: class {
-    func didReceivePhotos(photos: [Photo])
+    func didReceivePhotos(photos: [InstagramPhoto])
 }
 
 protocol PhotosViewRouterInput {

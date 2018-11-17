@@ -22,7 +22,7 @@ final class PhotosViewController: UIViewController, PhotosViewInput, NibLoadable
         output?.viewIsReady()
     }
 
-    func showPhotos(with photos: [Photo]) {
+    func showPhotos(with photos: [InstagramPhoto]) {
 
     }
 

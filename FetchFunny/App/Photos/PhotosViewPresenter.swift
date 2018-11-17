@@ -33,7 +33,7 @@ final class PhotosViewPresenter: PhotosViewOutput {
 }
 
 extension PhotosViewPresenter: PhotosViewInteractorOutput {
-    func didReceivePhotos(photos: [Photo]) {
+    func didReceivePhotos(photos: [InstagramPhoto]) {
         view?.showPhotos(with: photos)
     }
 }

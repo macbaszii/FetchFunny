@@ -17,6 +17,10 @@ final class PhotosViewInteractor: PhotosViewInteractorInput {
         self.instagramManager = instagramManager
     }
 
+    func loadMyPhotos() {
+        
+    }
+
     func loadPhotos(with string: String) {
         // fetch photos
     }

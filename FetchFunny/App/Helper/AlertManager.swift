@@ -8,13 +8,22 @@
 
 import UIKit
 
-extension UIAlertController {
-    func showAlert(title: String?,
-                   message: String?,
-                   proceedButtonTitle: String?,
-                   cancelButtonTitle: String?,
-                   proceedCompletion: (() -> Void)?,
-                   cancelCompletion: (() -> Void)?) -> UIAlertController {
+protocol AlertManager {
+    func createAlertView(title: String?,
+                         message: String?,
+                         proceedButtonTitle: String?,
+                         cancelButtonTitle: String?,
+                         proceedCompletion: (() -> Void)?,
+                         cancelCompletion: (() -> Void)?) -> UIAlertController
+}
+
+final class AlertManagerImplementation: AlertManager {
+    func createAlertView(title: String?,
+                         message: String?,
+                         proceedButtonTitle: String?,
+                         cancelButtonTitle: String?,
+                         proceedCompletion: (() -> Void)?,
+                         cancelCompletion: (() -> Void)?) -> UIAlertController {
 
         let alert = UIAlertController(
             title: title,
