@@ -41,6 +41,11 @@
 		0C8A397921A137E7005FD9DC /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A397721A137E7005FD9DC /* PhotoCell.swift */; };
 		0C8A397A21A137E7005FD9DC /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A397821A137E7005FD9DC /* PhotoCell.xib */; };
 		0C8A397C21A1446D005FD9DC /* InstagramArrayResponseWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A397B21A1446D005FD9DC /* InstagramArrayResponseWrapper.swift */; };
+		0C8A397F21A15388005FD9DC /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A397D21A15388005FD9DC /* PhotoDetailsViewController.swift */; };
+		0C8A398021A15388005FD9DC /* PhotoDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A397E21A15388005FD9DC /* PhotoDetailsViewController.xib */; };
+		0C8A398221A15599005FD9DC /* PhotoDetailsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A398121A15599005FD9DC /* PhotoDetailsModule.swift */; };
+		0C8A398421A1560A005FD9DC /* PhotoDetailsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A398321A1560A005FD9DC /* PhotoDetailsViewPresenter.swift */; };
+		0C8A398621A1569D005FD9DC /* PhotoDetailsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A398521A1569D005FD9DC /* PhotoDetailsModuleBuilder.swift */; };
 		602F82362391532280BEE4E8 /* Pods_FetchFunny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA14E918F97430731AAB7D60 /* Pods_FetchFunny.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +98,11 @@
 		0C8A397721A137E7005FD9DC /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		0C8A397821A137E7005FD9DC /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
 		0C8A397B21A1446D005FD9DC /* InstagramArrayResponseWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramArrayResponseWrapper.swift; sourceTree = "<group>"; };
+		0C8A397D21A15388005FD9DC /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
+		0C8A397E21A15388005FD9DC /* PhotoDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoDetailsViewController.xib; sourceTree = "<group>"; };
+		0C8A398121A15599005FD9DC /* PhotoDetailsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsModule.swift; sourceTree = "<group>"; };
+		0C8A398321A1560A005FD9DC /* PhotoDetailsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewPresenter.swift; sourceTree = "<group>"; };
+		0C8A398521A1569D005FD9DC /* PhotoDetailsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsModuleBuilder.swift; sourceTree = "<group>"; };
 		A6B22FC8E0EC2FCEBF02AC50 /* Pods-FetchFunny.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FetchFunny.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FetchFunny/Pods-FetchFunny.debug.xcconfig"; sourceTree = "<group>"; };
 		D09765CBAD50E23DF06554BB /* Pods-FetchFunny.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FetchFunny.release.xcconfig"; path = "Pods/Target Support Files/Pods-FetchFunny/Pods-FetchFunny.release.xcconfig"; sourceTree = "<group>"; };
 		FA14E918F97430731AAB7D60 /* Pods_FetchFunny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FetchFunny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -263,6 +273,11 @@
 		0CF3143E219C0C7A00841925 /* PhotoDetails */ = {
 			isa = PBXGroup;
 			children = (
+				0C8A398121A15599005FD9DC /* PhotoDetailsModule.swift */,
+				0C8A398521A1569D005FD9DC /* PhotoDetailsModuleBuilder.swift */,
+				0C8A397D21A15388005FD9DC /* PhotoDetailsViewController.swift */,
+				0C8A398321A1560A005FD9DC /* PhotoDetailsViewPresenter.swift */,
+				0C8A397E21A15388005FD9DC /* PhotoDetailsViewController.xib */,
 			);
 			path = PhotoDetails;
 			sourceTree = "<group>";
@@ -373,6 +388,7 @@
 				0C43127B219C03460016EF56 /* LaunchScreen.storyboard in Resources */,
 				0C431278219C03460016EF56 /* Assets.xcassets in Resources */,
 				0C05FEF5219C82C4001D4F49 /* WebViewController.xib in Resources */,
+				0C8A398021A15388005FD9DC /* PhotoDetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +458,7 @@
 				0C05FEEC219C6E48001D4F49 /* PhotosViewInteractor.swift in Sources */,
 				0C05FEE1219C613B001D4F49 /* NibLoadable.swift in Sources */,
 				0C05FF0D219C99F7001D4F49 /* RouteDispatcher.swift in Sources */,
+				0C8A397F21A15388005FD9DC /* PhotoDetailsViewController.swift in Sources */,
 				0C05FF0B219C99EA001D4F49 /* RootRouter.swift in Sources */,
 				0C05FEFF219C8D51001D4F49 /* InstagramLoginScreenBuilder.swift in Sources */,
 				0C05FEFC219C8D36001D4F49 /* InstagramLoginViewController.swift in Sources */,
@@ -455,11 +472,14 @@
 				0C1F4AD8219DE4E80081F9C7 /* InstagramLoginRouter.swift in Sources */,
 				0C05FF01219C8E9A001D4F49 /* InstagramLoginPresenter.swift in Sources */,
 				0C05FEEE219C6E54001D4F49 /* PhotosViewRouter.swift in Sources */,
+				0C8A398221A15599005FD9DC /* PhotoDetailsModule.swift in Sources */,
 				0C1F4B61219E607D0081F9C7 /* Result.swift in Sources */,
 				0C05FE56219C5942001D4F49 /* PhotosViewController.swift in Sources */,
 				0C05FEF1219C7CC9001D4F49 /* InstagramAPIManager.swift in Sources */,
 				0C05FF03219C8ED9001D4F49 /* InstagramLoginModule.swift in Sources */,
 				0C8A38F0219FAA83005FD9DC /* InstagramAPIClient.swift in Sources */,
+				0C8A398621A1569D005FD9DC /* PhotoDetailsModuleBuilder.swift in Sources */,
+				0C8A398421A1560A005FD9DC /* PhotoDetailsViewPresenter.swift in Sources */,
 				0C05FEE8219C6C4D001D4F49 /* PhotosViewModuleBuilder.swift in Sources */,
 				0C05FEE3219C61EF001D4F49 /* PhotosViewModule.swift in Sources */,
 				0C05FEEA219C6E3B001D4F49 /* PhotosViewPresenter.swift in Sources */,

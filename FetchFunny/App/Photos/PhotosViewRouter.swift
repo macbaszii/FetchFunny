@@ -9,9 +9,19 @@
 import UIKit
 
 final class PhotosViewRouter: PhotosViewRouterInput {
+    let detailsBuilder: PhotoDetailsModuleBuildable
+
     var viewController: UIViewController?
 
-    func navigateToPhotoDetails(with id: Int64) {
-        // navigate to details
+    init(detailsBuilder: PhotoDetailsModuleBuildable = PhotoDetailsModuleBuilder()) {
+        self.detailsBuilder = detailsBuilder
+    }
+
+    func navigateToPhotoDetails(for photo: InstagramPhoto) {
+        let detailsVC = detailsBuilder.build(with: photo)
+        viewController?.navigationController?.pushViewController(
+            detailsVC,
+            animated: true
+        )
     }
 }

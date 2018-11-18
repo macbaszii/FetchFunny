@@ -14,7 +14,7 @@ struct Image: Codable {
     let height: Int
 }
 
-struct Images: Codable {
+struct MultiResolutionImage: Codable {
     let thumbnail: Image
     let lowResolution: Image
     let standardResolution: Image
@@ -26,12 +26,24 @@ struct Images: Codable {
     }
 }
 
+struct PhotoCaption: Codable {
+    let createdTime: String
+    let text: String
+
+    enum CodingKeys: String, CodingKey {
+        case createdTime = "created_time"
+        case text
+    }
+}
+
 struct InstagramPhoto: Codable {
     let id: String
-    let imageURLs: Images
+    let caption: PhotoCaption
+    let multiResolutionImage: MultiResolutionImage
 
     enum CodingKeys: String, CodingKey {
         case id
-        case imageURLs = "images"
+        case caption
+        case multiResolutionImage = "images"
     }
 }

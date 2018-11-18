@@ -84,7 +84,7 @@ extension PhotosViewController: UICollectionViewDataSource,
 
         let currentPhoto = dataSource?.photo(at: indexPath)
         let viewModel = PhotoCellViewModel(
-            urlString: currentPhoto?.imageURLs.thumbnail.url ?? ""
+            urlString: currentPhoto?.multiResolutionImage.thumbnail.url ?? ""
         )
         cell.configureCell(with: viewModel)
 
@@ -92,7 +92,7 @@ extension PhotosViewController: UICollectionViewDataSource,
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        output?.tapPhoto(at: indexPath)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

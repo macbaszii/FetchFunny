@@ -28,7 +28,6 @@ protocol PhotosViewOutput {
     func viewIsReady()
     func fetchPhotos(with string: String)
     func tapPhoto(at indexPath: IndexPath)
-    func refreshPhotos()
 }
 
 protocol PhotosViewInteractorInput {
@@ -42,5 +41,5 @@ protocol PhotosViewInteractorOutput: class {
 }
 
 protocol PhotosViewRouterInput {
-    func navigateToPhotoDetails(with id: Int64)
+    func navigateToPhotoDetails(for photo: InstagramPhoto)
 }

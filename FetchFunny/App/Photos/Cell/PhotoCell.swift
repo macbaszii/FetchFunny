@@ -2,8 +2,8 @@
 //  PhotoCell.swift
 //  FetchFunny
 //
-//  Created by Anoochitarom, Kiattisak (Agoda) on 18/11/2561 BE.
-//  Copyright © 2561 Anoochitarom, Kiattisak (Agoda). All rights reserved.
+//  Created by Kiattisak Anoochitarom on 18/11/2561 BE.
+//  Copyright © 2018 Kiattisak A. All rights reserved.
 //
 
 import UIKit

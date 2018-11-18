@@ -32,11 +32,7 @@ final class PhotosViewPresenter: PhotosViewOutput {
     }
 
     func tapPhoto(at indexPath: IndexPath) {
-        
-    }
-
-    func refreshPhotos() {
-
+        router?.navigateToPhotoDetails(for: photo(at: indexPath))
     }
 }
 
