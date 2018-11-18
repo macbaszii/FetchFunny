@@ -18,14 +18,16 @@ final class NetworkClientImplementation: NetworkClient {
             with: url)
         { (data, urlResponse, error) in
 
-            guard error == nil else {
-                guard let unwrappedError = error else { return }
-                completion(.failure(unwrappedError))
-                return
-            }
+            DispatchQueue.main.async {
+                guard error == nil else {
+                    guard let unwrappedError = error else { return }
+                    completion(.failure(unwrappedError))
+                    return
+                }
 
-            guard let unwrappedData = data else { return }
-            completion(.success(unwrappedData))
+                guard let unwrappedData = data else { return }
+                completion(.success(unwrappedData))
+            }
         }
 
         return dataTask

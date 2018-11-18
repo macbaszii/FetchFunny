@@ -27,6 +27,7 @@ final class PhotosViewModuleBuilder: PhotosViewModuleBuildable {
         let router = PhotosViewRouter()
 
         viewController.output = presenter
+        viewController.dataSource = presenter
 
         presenter.view = viewController
         presenter.interactor = interactor

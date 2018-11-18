@@ -19,7 +19,9 @@ final class PhotosViewInteractor: PhotosViewInteractorInput {
     }
 
     func loadMyPhotos() {
-        
+        instagramManager.loadMyRecentPhotos(
+            photosModuleInput: output as? PhotosViewModuleInput
+        )
     }
 
     func loadPhotos(with string: String) {
@@ -33,6 +35,6 @@ extension PhotosViewInteractor: InstagramManagerDelegate {
     }
 
     func didReceiveFailureRequest(errorMessage: String) {
-        
+        output?.didReceiveErrorRequest(errorMessage: errorMessage)
     }
 }

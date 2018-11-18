@@ -17,10 +17,11 @@ protocol InstagramManager {
     func setDelegate(_ delegate: InstagramManagerDelegate?)
     func autorizationEndpointURL() -> URL
     func extractAccessToken(from url: URL) -> String
-    func loadMyRecentPhotos(photosModuleInput: PhotosViewModuleInput)
+    func loadMyRecentPhotos(photosModuleInput: PhotosViewModuleInput?)
 }
 
 final class InstagramManagerImplementation: InstagramManager {
+
     struct Endpoints {
         static let authorization = "https://api.instagram.com/oauth/authorize/"
         static let myRecentPhotos = "https://api.instagram.com/v1/users/self/media/recent/"
@@ -68,7 +69,7 @@ final class InstagramManagerImplementation: InstagramManager {
         return accessToken
     }
 
-    func loadMyRecentPhotos(photosModuleInput: PhotosViewModuleInput) {
+    func loadMyRecentPhotos(photosModuleInput: PhotosViewModuleInput?) {
         getAccessToken { [weak self] result in
             guard let strongSelf = self else { return }
             switch result {
@@ -87,7 +88,7 @@ final class InstagramManagerImplementation: InstagramManager {
                     }
                 )
             case .failure(let error):
-                photosModuleInput.retrivedAccessTokenNotFound(
+                photosModuleInput?.retrivedAccessTokenNotFound(
                     with: error.localizedDescription
                 )
             }

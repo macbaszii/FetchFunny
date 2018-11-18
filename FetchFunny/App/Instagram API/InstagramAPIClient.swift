@@ -35,7 +35,10 @@ final class InstagramAPIClientImplementation: InstagramAPIClient {
 
     private func parseInstagramPhotos(with data: Data) -> [InstagramPhoto] {
         do {
-            return try JSONDecoder().decode([InstagramPhoto].self, from: data)
+            return try JSONDecoder().decode(
+                InstagramPhotosResponseWrapper.self,
+                from: data
+            ).instagramPhotos
         } catch {
             print("Couldn't parse list of InstagramPhoto because \(error.localizedDescription)")
             return []

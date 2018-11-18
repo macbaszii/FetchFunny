@@ -9,19 +9,21 @@
 import Foundation
 
 final class PhotosViewPresenter: PhotosViewOutput {
-
     weak var view: PhotosViewInput?
     var interactor: PhotosViewInteractorInput?
     var router: PhotosViewRouterInput?
 
     let alertManager: AlertManager
 
+    var photos: [InstagramPhoto] = []
+
     init(with alertManager: AlertManager = AlertManagerImplementation()) {
         self.alertManager = alertManager
     }
 
     func viewIsReady() {
-        
+        view?.showLoadingView()
+        interactor?.loadMyPhotos()
     }
 
     func fetchPhotos(with string: String) {
@@ -38,12 +40,39 @@ final class PhotosViewPresenter: PhotosViewOutput {
     }
 }
 
+extension PhotosViewPresenter: PhotosViewDataSource {
+    func numberOfPhotos() -> Int {
+        return photos.count
+    }
+
+    func photo(at indexPath: IndexPath) -> InstagramPhoto {
+        return photos[indexPath.item]
+    }
+}
+
 extension PhotosViewPresenter: PhotosViewInteractorOutput {
     func didReceivePhotos(_ photos: [InstagramPhoto]) {
-        view?.showPhotos(with: photos)
+        self.photos = photos
+
+        view?.hideLoadingView()
+        view?.needsReloadPhotos()
     }
 
     func didReceiveErrorRequest(errorMessage: String) {
+        let alert = alertManager.createAlertView(
+            title: nil,
+            message: errorMessage,
+            proceedButtonTitle: "Ok",
+            cancelButtonTitle: nil,
+            proceedCompletion: nil,
+            cancelCompletion: nil
+        )
+        view?.showAlert(alert)
+    }
+}
+
+extension PhotosViewPresenter: PhotosViewModuleInput {
+    func retrivedAccessTokenNotFound(with errorMessage: String) {
         let alert = alertManager.createAlertView(
             title: nil,
             message: errorMessage,

@@ -3,4 +3,5 @@ use_frameworks!
 
 target 'FetchFunny' do
   pod 'KeychainAccess'
+  pod 'Kingfisher'
 end

@@ -10,14 +10,18 @@ import UIKit
 
 protocol PhotosViewModuleInput {
     func retrivedAccessTokenNotFound(with errorMessage: String)
-    
 }
 
 protocol PhotosViewInput: class {
-    func showPhotos(with photos: [InstagramPhoto])
+    func needsReloadPhotos()
     func showLoadingView()
     func hideLoadingView()
     func showAlert(_ alert: UIAlertController)
+}
+
+protocol PhotosViewDataSource {
+    func numberOfPhotos() -> Int
+    func photo(at indexPath: IndexPath) -> InstagramPhoto
 }
 
 protocol PhotosViewOutput {
