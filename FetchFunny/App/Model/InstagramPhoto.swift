@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum MediaType: String {
+    case image
+    case video
+}
+
 struct Image: Codable {
     let url: String
     let width: Int
@@ -36,13 +41,21 @@ struct PhotoCaption: Codable {
     }
 }
 
+struct PhotoUser: Codable {
+    let username: String
+}
+
 struct InstagramPhoto: Codable {
     let id: String
+    let type: String
+    let user: PhotoUser
     let caption: PhotoCaption
     let multiResolutionImage: MultiResolutionImage
 
     enum CodingKeys: String, CodingKey {
         case id
+        case type
+        case user
         case caption
         case multiResolutionImage = "images"
     }

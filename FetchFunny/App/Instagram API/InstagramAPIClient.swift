@@ -38,7 +38,7 @@ final class InstagramAPIClientImplementation: InstagramAPIClient {
             return try JSONDecoder().decode(
                 InstagramPhotosResponseWrapper.self,
                 from: data
-            ).instagramPhotos
+            ).instagramPhotos.filter({ $0.type == MediaType.image.rawValue })
         } catch {
             print("Couldn't parse list of InstagramPhoto because \(error.localizedDescription)")
             return []
