@@ -17,6 +17,7 @@ protocol PhotosViewInput: class {
     func showLoadingView()
     func hideLoadingView()
     func showAlert(_ alert: UIAlertController)
+    func setTitle(_ title: String)
 }
 
 protocol PhotosViewDataSource {

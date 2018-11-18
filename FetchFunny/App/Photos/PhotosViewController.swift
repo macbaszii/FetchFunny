@@ -42,6 +42,10 @@ final class PhotosViewController: UIViewController, PhotosViewInput, NibLoadable
         present(alert, animated: true, completion: nil)
     }
 
+    func setTitle(_ title: String) {
+        navigationItem.title = title
+    }
+
     // MARK: - Private
     private func setupView() {
         activityIndicator.hidesWhenStopped = true
