@@ -15,6 +15,7 @@ final class PhotosViewInteractor: PhotosViewInteractorInput {
 
     init(instagramManager: InstagramManager) {
         self.instagramManager = instagramManager
+        self.instagramManager.setDelegate(self)
     }
 
     func loadMyPhotos() {
@@ -23,5 +24,15 @@ final class PhotosViewInteractor: PhotosViewInteractorInput {
 
     func loadPhotos(with string: String) {
         // fetch photos
+    }
+}
+
+extension PhotosViewInteractor: InstagramManagerDelegate {
+    func didReceiveMyRecentPhotos(_ photos: [InstagramPhoto]) {
+        output?.didReceivePhotos(photos)
+    }
+
+    func didReceiveFailureRequest(errorMessage: String) {
+        
     }
 }

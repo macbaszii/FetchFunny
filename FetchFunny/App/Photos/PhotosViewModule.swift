@@ -6,7 +6,7 @@
 //  Copyright © 2018 Kiattisak A. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol PhotosViewModuleInput {
     func retrivedAccessTokenNotFound(with errorMessage: String)
@@ -17,6 +17,7 @@ protocol PhotosViewInput: class {
     func showPhotos(with photos: [InstagramPhoto])
     func showLoadingView()
     func hideLoadingView()
+    func showAlert(_ alert: UIAlertController)
 }
 
 protocol PhotosViewOutput {
@@ -32,7 +33,8 @@ protocol PhotosViewInteractorInput {
 }
 
 protocol PhotosViewInteractorOutput: class {
-    func didReceivePhotos(photos: [InstagramPhoto])
+    func didReceivePhotos(_ photos: [InstagramPhoto])
+    func didReceiveErrorRequest(errorMessage: String)
 }
 
 protocol PhotosViewRouterInput {

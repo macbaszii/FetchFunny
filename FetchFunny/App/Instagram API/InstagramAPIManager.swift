@@ -14,6 +14,7 @@ protocol InstagramManagerDelegate: class {
 }
 
 protocol InstagramManager {
+    func setDelegate(_ delegate: InstagramManagerDelegate?)
     func autorizationEndpointURL() -> URL
     func extractAccessToken(from url: URL) -> String
     func loadMyRecentPhotos(photosModuleInput: PhotosViewModuleInput)
@@ -43,6 +44,10 @@ final class InstagramManagerImplementation: InstagramManager {
 
         self.keychain = keychain
         self.apiClient = apiClient
+    }
+
+    func setDelegate(_ delegate: InstagramManagerDelegate?) {
+        self.delegate = delegate
     }
 
     func autorizationEndpointURL() -> URL {

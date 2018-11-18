@@ -23,7 +23,7 @@ final class PhotosViewController: UIViewController, PhotosViewInput, NibLoadable
     }
 
     func showPhotos(with photos: [InstagramPhoto]) {
-
+        
     }
 
     func showLoadingView() {
@@ -37,5 +37,9 @@ final class PhotosViewController: UIViewController, PhotosViewInput, NibLoadable
     // MARK: - Private
     private func setupView() {
         hideLoadingView()
+    }
+
+    func showAlert(_ alert: UIAlertController) {
+        present(alert, animated: true, completion: nil)
     }
 }

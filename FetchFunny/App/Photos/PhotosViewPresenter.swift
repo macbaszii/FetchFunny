@@ -14,6 +14,12 @@ final class PhotosViewPresenter: PhotosViewOutput {
     var interactor: PhotosViewInteractorInput?
     var router: PhotosViewRouterInput?
 
+    let alertManager: AlertManager
+
+    init(with alertManager: AlertManager = AlertManagerImplementation()) {
+        self.alertManager = alertManager
+    }
+
     func viewIsReady() {
         
     }
@@ -33,7 +39,19 @@ final class PhotosViewPresenter: PhotosViewOutput {
 }
 
 extension PhotosViewPresenter: PhotosViewInteractorOutput {
-    func didReceivePhotos(photos: [InstagramPhoto]) {
+    func didReceivePhotos(_ photos: [InstagramPhoto]) {
         view?.showPhotos(with: photos)
+    }
+
+    func didReceiveErrorRequest(errorMessage: String) {
+        let alert = alertManager.createAlertView(
+            title: nil,
+            message: errorMessage,
+            proceedButtonTitle: "Ok",
+            cancelButtonTitle: nil,
+            proceedCompletion: nil,
+            cancelCompletion: nil
+        )
+        view?.showAlert(alert)
     }
 }
