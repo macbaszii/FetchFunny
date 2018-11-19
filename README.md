@@ -1,4 +1,4 @@
-##### Fetch Funny
+# Fetch Funny
 
 ### Prerequisite for running this project
   - Cocoapods for Dependencies Management
