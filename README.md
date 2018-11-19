@@ -1,7 +1,8 @@
 # Fetch Funny
 
 ### Prerequisite for running this project
-  - Cocoapods for Dependencies Management
+  - Xcode 10
+  - Cocoapods
 
 ### Before run the project
   - $ pod install
