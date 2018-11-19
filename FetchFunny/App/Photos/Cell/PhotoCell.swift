@@ -7,19 +7,18 @@
 //
 
 import UIKit
-import Kingfisher
 
-final class PhotoCell: UICollectionViewCell {
+final class PhotoCell: UICollectionViewCell, NibLoadable {
+    typealias NibRootType = PhotoCell
 
     @IBOutlet weak var imageView: UIImageView!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+    var imageViewURLLoadable: ImageViewURLLoadable?
 
     func configureCell(with viewModel: PhotoCellViewModel) {
-        guard let url = URL(string: viewModel.urlString) else { return }
-        imageView.kf.setImage(with: url)
+        guard let imageViewURLLoadable = self.imageViewURLLoadable,
+            let url = URL(string: viewModel.urlString) else { return }
+        imageViewURLLoadable.setImageView(imageView, with: url)
     }
 }
 

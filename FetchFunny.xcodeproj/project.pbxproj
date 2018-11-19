@@ -51,6 +51,7 @@
 		0C8A2AAF21A2B790006472FC /* PhotoDetailsViewModuleMockObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A2AAE21A2B790006472FC /* PhotoDetailsViewModuleMockObjects.swift */; };
 		0C8A2AB121A2BDB9006472FC /* ImageViewURLLoadble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A2AB021A2BDB9006472FC /* ImageViewURLLoadble.swift */; };
 		0C8A2AB321A2BF9A006472FC /* PhotoDetailsViewPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A2AB221A2BF9A006472FC /* PhotoDetailsViewPresenterTests.swift */; };
+		0C8A2AB621A2C3A0006472FC /* PhotoCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A2AB521A2C3A0006472FC /* PhotoCellTests.swift */; };
 		0C8A38F0219FAA83005FD9DC /* InstagramAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A38EF219FAA83005FD9DC /* InstagramAPIClient.swift */; };
 		0C8A397921A137E7005FD9DC /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A397721A137E7005FD9DC /* PhotoCell.swift */; };
 		0C8A397A21A137E7005FD9DC /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A397821A137E7005FD9DC /* PhotoCell.xib */; };
@@ -122,6 +123,7 @@
 		0C8A2AAE21A2B790006472FC /* PhotoDetailsViewModuleMockObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewModuleMockObjects.swift; sourceTree = "<group>"; };
 		0C8A2AB021A2BDB9006472FC /* ImageViewURLLoadble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewURLLoadble.swift; sourceTree = "<group>"; };
 		0C8A2AB221A2BF9A006472FC /* PhotoDetailsViewPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewPresenterTests.swift; sourceTree = "<group>"; };
+		0C8A2AB521A2C3A0006472FC /* PhotoCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellTests.swift; sourceTree = "<group>"; };
 		0C8A38EF219FAA83005FD9DC /* InstagramAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramAPIClient.swift; sourceTree = "<group>"; };
 		0C8A397721A137E7005FD9DC /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		0C8A397821A137E7005FD9DC /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				0C431287219C03460016EF56 /* Info.plist */,
+				0C8A2AB421A2C38F006472FC /* PhotoCell */,
 				0C16270521A1B86400EB7D5C /* PhotosView */,
 				0C8A291121A2ABC0006472FC /* PhotoDetailsView */,
 				0C16270921A1B8BF00EB7D5C /* Mock Helper */,
@@ -312,6 +315,14 @@
 				0C8A2AAE21A2B790006472FC /* PhotoDetailsViewModuleMockObjects.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		0C8A2AB421A2C38F006472FC /* PhotoCell */ = {
+			isa = PBXGroup;
+			children = (
+				0C8A2AB521A2C3A0006472FC /* PhotoCellTests.swift */,
+			);
+			path = PhotoCell;
 			sourceTree = "<group>";
 		};
 		0C8A397621A137C7005FD9DC /* Cell */ = {
@@ -590,6 +601,7 @@
 				0C16270421A1B74500EB7D5C /* PhotosViewControllerTests.swift in Sources */,
 				0C16279421A1C13900EB7D5C /* PhotosViewInteractorTests.swift in Sources */,
 				0C16279021A1B90000EB7D5C /* MockInvocable.swift in Sources */,
+				0C8A2AB621A2C3A0006472FC /* PhotoCellTests.swift in Sources */,
 				0C8A2AAA21A2B444006472FC /* PhotoDetailsModuleBuilderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
