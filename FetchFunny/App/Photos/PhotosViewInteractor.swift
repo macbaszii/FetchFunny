@@ -25,7 +25,7 @@ final class PhotosViewInteractor: PhotosViewInteractorInput {
     }
 
     func loadPhotos(with string: String) {
-        // fetch photos
+        // fetch photos from string
     }
 }
 

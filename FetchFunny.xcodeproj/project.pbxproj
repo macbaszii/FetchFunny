@@ -29,6 +29,12 @@
 		0C05FF09219C9964001D4F49 /* ApplicationDelegateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C05FF08219C9964001D4F49 /* ApplicationDelegateHelper.swift */; };
 		0C05FF0B219C99EA001D4F49 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C05FF0A219C99EA001D4F49 /* RootRouter.swift */; };
 		0C05FF0D219C99F7001D4F49 /* RouteDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C05FF0C219C99F7001D4F49 /* RouteDispatcher.swift */; };
+		0C16270221A1B30900EB7D5C /* PhotosViewModuleBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16270121A1B30900EB7D5C /* PhotosViewModuleBuilderTests.swift */; };
+		0C16270421A1B74500EB7D5C /* PhotosViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16270321A1B74500EB7D5C /* PhotosViewControllerTests.swift */; };
+		0C16270821A1B8A900EB7D5C /* PhotosViewModuleMockObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16270721A1B8A900EB7D5C /* PhotosViewModuleMockObjects.swift */; };
+		0C16279021A1B90000EB7D5C /* MockInvocable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16278F21A1B90000EB7D5C /* MockInvocable.swift */; };
+		0C16279221A1C12800EB7D5C /* PhotosViewPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16279121A1C12800EB7D5C /* PhotosViewPresenterTests.swift */; };
+		0C16279421A1C13900EB7D5C /* PhotosViewInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16279321A1C13900EB7D5C /* PhotosViewInteractorTests.swift */; };
 		0C1F4AD8219DE4E80081F9C7 /* InstagramLoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1F4AD7219DE4E80081F9C7 /* InstagramLoginRouter.swift */; };
 		0C1F4ADA219DE61A0081F9C7 /* InstagramLoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1F4AD9219DE61A0081F9C7 /* InstagramLoginInteractor.swift */; };
 		0C1F4B61219E607D0081F9C7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1F4B60219E607D0081F9C7 /* Result.swift */; };
@@ -37,6 +43,9 @@
 		0C431271219C03440016EF56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C431270219C03440016EF56 /* AppDelegate.swift */; };
 		0C431278219C03460016EF56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C431277219C03460016EF56 /* Assets.xcassets */; };
 		0C43127B219C03460016EF56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C431279219C03460016EF56 /* LaunchScreen.storyboard */; };
+		0C8A299A21A2AD1B006472FC /* MockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A299921A2AD1B006472FC /* MockViewController.swift */; };
+		0C8A299C21A2AD4A006472FC /* MockNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A299B21A2AD4A006472FC /* MockNavigationController.swift */; };
+		0C8A299E21A2ADF2006472FC /* PhotosViewRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A299D21A2ADF2006472FC /* PhotosViewRouterTests.swift */; };
 		0C8A38F0219FAA83005FD9DC /* InstagramAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A38EF219FAA83005FD9DC /* InstagramAPIClient.swift */; };
 		0C8A397921A137E7005FD9DC /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A397721A137E7005FD9DC /* PhotoCell.swift */; };
 		0C8A397A21A137E7005FD9DC /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A397821A137E7005FD9DC /* PhotoCell.xib */; };
@@ -82,6 +91,12 @@
 		0C05FF08219C9964001D4F49 /* ApplicationDelegateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegateHelper.swift; sourceTree = "<group>"; };
 		0C05FF0A219C99EA001D4F49 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		0C05FF0C219C99F7001D4F49 /* RouteDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDispatcher.swift; sourceTree = "<group>"; };
+		0C16270121A1B30900EB7D5C /* PhotosViewModuleBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewModuleBuilderTests.swift; sourceTree = "<group>"; };
+		0C16270321A1B74500EB7D5C /* PhotosViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewControllerTests.swift; sourceTree = "<group>"; };
+		0C16270721A1B8A900EB7D5C /* PhotosViewModuleMockObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewModuleMockObjects.swift; sourceTree = "<group>"; };
+		0C16278F21A1B90000EB7D5C /* MockInvocable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockInvocable.swift; sourceTree = "<group>"; };
+		0C16279121A1C12800EB7D5C /* PhotosViewPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewPresenterTests.swift; sourceTree = "<group>"; };
+		0C16279321A1C13900EB7D5C /* PhotosViewInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewInteractorTests.swift; sourceTree = "<group>"; };
 		0C1F4AD7219DE4E80081F9C7 /* InstagramLoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramLoginRouter.swift; sourceTree = "<group>"; };
 		0C1F4AD9219DE61A0081F9C7 /* InstagramLoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramLoginInteractor.swift; sourceTree = "<group>"; };
 		0C1F4B60219E607D0081F9C7 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -94,6 +109,10 @@
 		0C43127C219C03460016EF56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C431281219C03460016EF56 /* FetchFunnyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchFunnyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C431287219C03460016EF56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C8A291221A2ABEE006472FC /* PhotoDetailsModuleBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsModuleBuilderTests.swift; sourceTree = "<group>"; };
+		0C8A299921A2AD1B006472FC /* MockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewController.swift; sourceTree = "<group>"; };
+		0C8A299B21A2AD4A006472FC /* MockNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigationController.swift; sourceTree = "<group>"; };
+		0C8A299D21A2ADF2006472FC /* PhotosViewRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewRouterTests.swift; sourceTree = "<group>"; };
 		0C8A38EF219FAA83005FD9DC /* InstagramAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramAPIClient.swift; sourceTree = "<group>"; };
 		0C8A397721A137E7005FD9DC /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		0C8A397821A137E7005FD9DC /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
@@ -181,6 +200,37 @@
 			path = LoginScreen;
 			sourceTree = "<group>";
 		};
+		0C16270521A1B86400EB7D5C /* PhotosView */ = {
+			isa = PBXGroup;
+			children = (
+				0C16270621A1B87500EB7D5C /* Mocks */,
+				0C16270121A1B30900EB7D5C /* PhotosViewModuleBuilderTests.swift */,
+				0C16270321A1B74500EB7D5C /* PhotosViewControllerTests.swift */,
+				0C16279121A1C12800EB7D5C /* PhotosViewPresenterTests.swift */,
+				0C16279321A1C13900EB7D5C /* PhotosViewInteractorTests.swift */,
+				0C8A299D21A2ADF2006472FC /* PhotosViewRouterTests.swift */,
+			);
+			path = PhotosView;
+			sourceTree = "<group>";
+		};
+		0C16270621A1B87500EB7D5C /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				0C16270721A1B8A900EB7D5C /* PhotosViewModuleMockObjects.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		0C16270921A1B8BF00EB7D5C /* Mock Helper */ = {
+			isa = PBXGroup;
+			children = (
+				0C16278F21A1B90000EB7D5C /* MockInvocable.swift */,
+				0C8A299921A2AD1B006472FC /* MockViewController.swift */,
+				0C8A299B21A2AD4A006472FC /* MockNavigationController.swift */,
+			);
+			path = "Mock Helper";
+			sourceTree = "<group>";
+		};
 		0C1F4B66219E6E7B0081F9C7 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +278,8 @@
 			isa = PBXGroup;
 			children = (
 				0C431287219C03460016EF56 /* Info.plist */,
+				0C16270521A1B86400EB7D5C /* PhotosView */,
+				0C16270921A1B8BF00EB7D5C /* Mock Helper */,
 			);
 			path = FetchFunnyTests;
 			sourceTree = "<group>";
@@ -354,6 +406,7 @@
 					};
 					0C431280219C03460016EF56 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = 0C43126C219C03440016EF56;
 					};
 				};
@@ -494,6 +547,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C16270821A1B8A900EB7D5C /* PhotosViewModuleMockObjects.swift in Sources */,
+				0C16279221A1C12800EB7D5C /* PhotosViewPresenterTests.swift in Sources */,
+				0C8A299C21A2AD4A006472FC /* MockNavigationController.swift in Sources */,
+				0C16270221A1B30900EB7D5C /* PhotosViewModuleBuilderTests.swift in Sources */,
+				0C8A299E21A2ADF2006472FC /* PhotosViewRouterTests.swift in Sources */,
+				0C8A299A21A2AD1B006472FC /* MockViewController.swift in Sources */,
+				0C16270421A1B74500EB7D5C /* PhotosViewControllerTests.swift in Sources */,
+				0C16279421A1C13900EB7D5C /* PhotosViewInteractorTests.swift in Sources */,
+				0C16279021A1B90000EB7D5C /* MockInvocable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,6 +740,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J7P6FDM3W5;
 				INFOPLIST_FILE = FetchFunnyTests/Info.plist;
@@ -688,6 +751,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kiattisak.FetchFunnyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FetchFunny.app/FetchFunny";
@@ -699,6 +763,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J7P6FDM3W5;
 				INFOPLIST_FILE = FetchFunnyTests/Info.plist;
