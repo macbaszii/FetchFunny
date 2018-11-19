@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 final class PhotoDetailsViewController: UIViewController, NibLoadable, PhotoDetailsViewInput {
     typealias NibRootType = PhotoDetailsViewController
@@ -17,6 +16,7 @@ final class PhotoDetailsViewController: UIViewController, NibLoadable, PhotoDeta
     @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
 
     var output: PhotoDetailsViewOutput?
+    var imageViewURLLoadable: ImageViewURLLoadable?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ final class PhotoDetailsViewController: UIViewController, NibLoadable, PhotoDeta
     }
 
     func setImage(url: URL?, appropriateHeight: Double) {
-        imageView.kf.setImage(with: url)
+        imageViewURLLoadable?.setImageView(imageView, with: url)
         imageViewHeightConstraint.constant = CGFloat(appropriateHeight)
     }
 }
