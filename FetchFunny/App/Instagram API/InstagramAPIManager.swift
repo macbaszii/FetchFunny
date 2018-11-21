@@ -17,7 +17,7 @@ protocol InstagramManagerDelegate: class {
 protocol InstagramManager {
     func setDelegate(_ delegate: InstagramManagerDelegate?)
     func autorizationEndpointURL() -> URL
-    func extractAccessToken(from url: URL) -> String
+    func extractAccessToken(from url: URL) -> String?
     func loadMyRecentPhotos(photosModuleInput: PhotosViewModuleInput?)
     func clearAccessToken()
     func clearInstagramCookie()
@@ -64,8 +64,11 @@ final class InstagramManagerImplementation: InstagramManager {
         return autorizationURL
     }
 
-    func extractAccessToken(from url: URL) -> String {
-        let accessTokenPart = url.absoluteString.split(separator: "#")[1]
+    func extractAccessToken(from url: URL) -> String? {
+        let separatedURL = url.absoluteString.split(separator: "#")
+        guard let accessTokenPart = separatedURL[safe: 1] else {
+            return nil
+        }
         let accessToken = accessTokenPart.replacingOccurrences(
             of: Constants.accessTokenPrefix,
             with: ""

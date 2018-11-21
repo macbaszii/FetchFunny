@@ -27,8 +27,11 @@ final class InstagramLoginInteractor: InstagramLoginInteractorInput {
 
     func storeAccessToken(from url: URL) {
         do {
-            let accessToekn = instagramManager.extractAccessToken(from: url)
-            try keychain.setItem(accessToekn, for: InstagramManagerImplementation.Constants.obtainTokenKey)
+            guard let accessToken = instagramManager.extractAccessToken(from: url) else { return }
+            try keychain.setItem(
+                accessToken,
+                for: InstagramManagerImplementation.Constants.obtainTokenKey
+            )
             output?.didStoreAccessToken()
         } catch KeychainManagerImplementation.KeychainManagerError.setItemFailed(let messsage) {
             print(messsage)

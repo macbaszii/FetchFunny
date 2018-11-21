@@ -44,6 +44,7 @@
 		0C431278219C03460016EF56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C431277219C03460016EF56 /* Assets.xcassets */; };
 		0C43127B219C03460016EF56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C431279219C03460016EF56 /* LaunchScreen.storyboard */; };
 		0C612D6721A57C4C003208B2 /* URLValidatior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C612D6621A57C4C003208B2 /* URLValidatior.swift */; };
+		0C612D6921A5A879003208B2 /* Collection+SafeAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C612D6821A5A879003208B2 /* Collection+SafeAccess.swift */; };
 		0C8A299A21A2AD1B006472FC /* MockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A299921A2AD1B006472FC /* MockViewController.swift */; };
 		0C8A299C21A2AD4A006472FC /* MockNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A299B21A2AD4A006472FC /* MockNavigationController.swift */; };
 		0C8A299E21A2ADF2006472FC /* PhotosViewRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A299D21A2ADF2006472FC /* PhotosViewRouterTests.swift */; };
@@ -117,6 +118,7 @@
 		0C431281219C03460016EF56 /* FetchFunnyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchFunnyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C431287219C03460016EF56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C612D6621A57C4C003208B2 /* URLValidatior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLValidatior.swift; sourceTree = "<group>"; };
+		0C612D6821A5A879003208B2 /* Collection+SafeAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+SafeAccess.swift"; sourceTree = "<group>"; };
 		0C8A291221A2ABEE006472FC /* PhotoDetailsModuleBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsModuleBuilderTests.swift; sourceTree = "<group>"; };
 		0C8A299921A2AD1B006472FC /* MockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewController.swift; sourceTree = "<group>"; };
 		0C8A299B21A2AD4A006472FC /* MockNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigationController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				0C1F4B62219E63ED0081F9C7 /* AlertManager.swift */,
 				0C8A2AB021A2BDB9006472FC /* ImageViewURLLoadble.swift */,
 				0C612D6621A57C4C003208B2 /* URLValidatior.swift */,
+				0C612D6821A5A879003208B2 /* Collection+SafeAccess.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 				0C05FF03219C8ED9001D4F49 /* InstagramLoginModule.swift in Sources */,
 				0C8A38F0219FAA83005FD9DC /* InstagramAPIClient.swift in Sources */,
 				0C8A398621A1569D005FD9DC /* PhotoDetailsModuleBuilder.swift in Sources */,
+				0C612D6921A5A879003208B2 /* Collection+SafeAccess.swift in Sources */,
 				0C8A398421A1560A005FD9DC /* PhotoDetailsViewPresenter.swift in Sources */,
 				0C05FEE8219C6C4D001D4F49 /* PhotosViewModuleBuilder.swift in Sources */,
 				0C05FEE3219C61EF001D4F49 /* PhotosViewModule.swift in Sources */,
