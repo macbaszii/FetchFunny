@@ -11,6 +11,7 @@ import KeychainAccess
 protocol KeychainManager {
     func getItem(for key: String) throws -> String
     func setItem(_ item: String, for key: String) throws
+    func removeItem(for key: String) throws
 }
 
 final class KeychainManagerImplementation: KeychainManager {
@@ -21,6 +22,7 @@ final class KeychainManagerImplementation: KeychainManager {
     enum KeychainManagerError: Error {
         case itemNotFound(message: String)
         case setItemFailed(message: String)
+        case removeItemFailed(mesage: String)
     }
 
     let keychain: Keychain
@@ -45,6 +47,16 @@ final class KeychainManagerImplementation: KeychainManager {
         } catch {
             throw KeychainManagerError.setItemFailed(
                 message: "Coudln't set item to this `Key: \(key)`"
+            )
+        }
+    }
+
+    func removeItem(for key: String) throws {
+        do {
+            try keychain.remove(key)
+        } catch {
+            throw KeychainManagerError.removeItemFailed(
+                mesage: "Couldn't remove item for this `Key: \(key)`"
             )
         }
     }

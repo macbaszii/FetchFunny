@@ -27,6 +27,11 @@ final class PhotosViewInteractor: PhotosViewInteractorInput {
     func loadPhotos(with string: String) {
         // fetch photos from string
     }
+
+    func logout() {
+        instagramManager.clearAccessToken()
+        instagramManager.clearInstagramCookie()
+    }
 }
 
 extension PhotosViewInteractor: InstagramManagerDelegate {
@@ -36,5 +41,9 @@ extension PhotosViewInteractor: InstagramManagerDelegate {
 
     func didReceiveFailureRequest(errorMessage: String) {
         output?.didReceiveErrorRequest(errorMessage: errorMessage)
+    }
+
+    func didClearAccessToken() {
+        output?.didClearAccessToken()
     }
 }

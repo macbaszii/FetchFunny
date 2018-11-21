@@ -14,6 +14,12 @@ final class InstagramLoginPresenter: InstagramLoginViewOutput,
     var router: InstagramLoginRouterInput?
     var interactor: InstagramLoginInteractorInput?
 
+    private let urlValidator: URLValidator
+
+    init(urlValidator: URLValidator) {
+        self.urlValidator = urlValidator
+    }
+
     func viewIsReady() {
         
     }
@@ -37,6 +43,10 @@ final class InstagramLoginPresenter: InstagramLoginViewOutput,
 
 extension InstagramLoginPresenter: WebViewControllerDelegate {
     func didReceiveResultURL(_ url: URL) {
+        guard urlValidator.isURLHasAccessToken(url: url) else {
+            return
+        }
+
         interactor?.storeAccessToken(from: url)
     }
 }

@@ -14,7 +14,8 @@ final class InstagramLoginScreenBuilder {
             fatalError("Couldn't load InstagramLoginViewController from nib file")
         }
 
-        let presenter = InstagramLoginPresenter()
+        let urlValidator = URLValidatorImplementation()
+        let presenter = InstagramLoginPresenter(urlValidator: urlValidator)
         let instagramManager = InstagramManagerImplementation()
         let keychainManager = KeychainManagerImplementation()
         let interactor = InstagramLoginInteractor(

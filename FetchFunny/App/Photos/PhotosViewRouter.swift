@@ -22,6 +22,7 @@ final class PhotosViewRouter: PhotosViewRouterInput {
             with: photo,
             imageViewURLLoadable: ImageViewURLLoadableImplementation()
         )
+        
         viewController?.navigationController?.pushViewController(
             detailsVC,
             animated: true

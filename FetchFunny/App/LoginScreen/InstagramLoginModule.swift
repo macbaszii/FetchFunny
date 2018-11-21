@@ -9,7 +9,6 @@
 import Foundation
 
 protocol InstagramLoginViewInput {
-
 }
 
 protocol InstagramLoginViewOutput {

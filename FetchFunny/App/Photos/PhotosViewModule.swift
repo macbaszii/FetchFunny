@@ -29,16 +29,19 @@ protocol PhotosViewOutput {
     func viewIsReady()
     func fetchPhotos(with string: String)
     func tapPhoto(at indexPath: IndexPath)
+    func logoutButtonTapped()
 }
 
 protocol PhotosViewInteractorInput {
     func loadMyPhotos()
     func loadPhotos(with string: String)
+    func logout()
 }
 
 protocol PhotosViewInteractorOutput: class {
     func didReceivePhotos(_ photos: [InstagramPhoto])
     func didReceiveErrorRequest(errorMessage: String)
+    func didClearAccessToken()
 }
 
 protocol PhotosViewRouterInput {

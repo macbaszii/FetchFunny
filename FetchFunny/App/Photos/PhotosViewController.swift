@@ -51,6 +51,7 @@ final class PhotosViewController: UIViewController, PhotosViewInput, NibLoadable
         activityIndicator.hidesWhenStopped = true
         hideLoadingView()
         setupCollectionView()
+        setupLogoutButton()
     }
 
     private func setupCollectionView() {
@@ -66,7 +67,21 @@ final class PhotosViewController: UIViewController, PhotosViewInput, NibLoadable
         )
         collectionView.alwaysBounceVertical = true
         collectionView.backgroundColor = .white
+    }
 
+    private func setupLogoutButton() {
+        let logoutButton = UIBarButtonItem(
+            title: "Logout",
+            style: .plain,
+            target: self,
+            action: #selector(logoutButtonTapped(_:))
+        )
+
+        navigationItem.leftBarButtonItem = logoutButton
+    }
+
+    @objc func logoutButtonTapped(_ item: UIBarButtonItem) {
+        output?.logoutButtonTapped()
     }
 }
 

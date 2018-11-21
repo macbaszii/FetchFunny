@@ -6,7 +6,7 @@
 //  Copyright © 2018 Kiattisak A. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 final class PhotosViewPresenter: PhotosViewOutput {
     weak var view: PhotosViewInput?
@@ -34,8 +34,13 @@ final class PhotosViewPresenter: PhotosViewOutput {
     func tapPhoto(at indexPath: IndexPath) {
         router?.navigateToPhotoDetails(for: photo(at: indexPath))
     }
+
+    func logoutButtonTapped() {
+        interactor?.logout()
+    }
 }
 
+// MARK: - PhotosViewDataSource
 extension PhotosViewPresenter: PhotosViewDataSource {
     func numberOfPhotos() -> Int {
         return photos.count
@@ -46,6 +51,7 @@ extension PhotosViewPresenter: PhotosViewDataSource {
     }
 }
 
+// MARK: - PhotosViewInteractorOutput
 extension PhotosViewPresenter: PhotosViewInteractorOutput {
     func didReceivePhotos(_ photos: [InstagramPhoto]) {
         self.photos = photos
@@ -66,8 +72,14 @@ extension PhotosViewPresenter: PhotosViewInteractorOutput {
         )
         view?.showAlert(alert)
     }
+
+    func didClearAccessToken() {
+        guard let application = UIApplication.shared.delegate as? AppDelegate else { return }
+        application.applicationDelegateHelper?.rootToLoginScreen()
+    }
 }
 
+// MARK: - PhotosViewModuleInput
 extension PhotosViewPresenter: PhotosViewModuleInput {
     func retrivedAccessTokenNotFound(with errorMessage: String) {
         let alert = alertManager.createAlertView(

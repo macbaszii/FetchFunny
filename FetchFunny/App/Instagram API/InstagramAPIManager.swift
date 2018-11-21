@@ -11,6 +11,7 @@ import Foundation
 protocol InstagramManagerDelegate: class {
     func didReceiveMyRecentPhotos(_ photos: [InstagramPhoto])
     func didReceiveFailureRequest(errorMessage: String)
+    func didClearAccessToken()
 }
 
 protocol InstagramManager {
@@ -18,6 +19,8 @@ protocol InstagramManager {
     func autorizationEndpointURL() -> URL
     func extractAccessToken(from url: URL) -> String
     func loadMyRecentPhotos(photosModuleInput: PhotosViewModuleInput?)
+    func clearAccessToken()
+    func clearInstagramCookie()
 }
 
 final class InstagramManagerImplementation: InstagramManager {
@@ -33,6 +36,8 @@ final class InstagramManagerImplementation: InstagramManager {
         static let responseType = "token"
         static let obtainTokenKey = "com.instagram.token"
         static let accessTokenPrefix = "access_token="
+        static let instagramCookieURL = ".instagram.com"
+        static let instagramAPICookieURL = "api.instagram.com"
     }
 
     weak var delegate: InstagramManagerDelegate?
@@ -93,6 +98,32 @@ final class InstagramManagerImplementation: InstagramManager {
                 )
             }
         }
+    }
+
+    func clearAccessToken() {
+        do {
+            try keychain.removeItem(for: Constants.obtainTokenKey)
+            delegate?.didClearAccessToken()
+        } catch KeychainManagerImplementation.KeychainManagerError.removeItemFailed(let message) {
+            print(message)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
+    func clearInstagramCookie() {
+        let cookieJar = HTTPCookieStorage.shared
+        guard let exsitingCookies = cookieJar.cookies else { return }
+        for cookie in exsitingCookies {
+            guard isInstagramCookie(cookie: cookie) else { return }
+            cookieJar.deleteCookie(cookie)
+        }
+    }
+
+    // MARK: - Private
+    private func isInstagramCookie(cookie: HTTPCookie) -> Bool {
+        return cookie.domain == Constants.instagramCookieURL ||
+            cookie.domain == Constants.instagramAPICookieURL
     }
 
     private func myRecentPhotosEndpoint(with accessToken: String) -> URL? {
