@@ -58,7 +58,7 @@ extension PhotosViewPresenter: PhotosViewInteractorOutput {
 
         view?.hideLoadingView()
         view?.needsReloadPhotos()
-        view?.setTitle(photos[0].user.username)
+        view?.setTitle(photos[safe: 0]?.user.username ?? "noname")
     }
 
     func didReceiveErrorRequest(errorMessage: String) {
