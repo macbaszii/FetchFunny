@@ -13,9 +13,11 @@ import XCTest
 final class PhotoDetailsModuleBuilderTests: XCTestCase {
     func testBuildModule() {
         let builder = PhotoDetailsModuleBuilder()
+        let imageURLLoadable = MockImageViewURLLoadable()
 
         guard let viewController = builder.build(
-            with: InstagramPhoto.mockInstagramPhoto
+            with: InstagramPhoto.mockInstagramPhoto,
+            imageViewURLLoadable: imageURLLoadable
         ) as? PhotoDetailsViewController else {
             return XCTFail("Couldn't build PhotoDetailsViewController")
         }

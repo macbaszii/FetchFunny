@@ -165,14 +165,14 @@ final class MockInstagramManager: InstagramManager, MockInvocable {
 }
 
 final class MockPhotoDetailsModuleBuilder: PhotoDetailsModuleBuildable, MockInvocable {
-
     var invocations: [Invocation] = []
 
     enum Invocation: MockInvocationEnum {
         case build(photo: InstagramPhoto)
     }
 
-    func build(with photo: InstagramPhoto) -> UIViewController {
+    func build(with photo: InstagramPhoto,
+               imageViewURLLoadable: ImageViewURLLoadable) -> UIViewController {
         invocations.append(.build(photo: photo))
         return UIViewController()
     }

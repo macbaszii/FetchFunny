@@ -18,7 +18,10 @@ final class PhotosViewRouter: PhotosViewRouterInput {
     }
 
     func navigateToPhotoDetails(for photo: InstagramPhoto) {
-        let detailsVC = detailsBuilder.build(with: photo)
+        let detailsVC = detailsBuilder.build(
+            with: photo,
+            imageViewURLLoadable: ImageViewURLLoadableImplementation()
+        )
         viewController?.navigationController?.pushViewController(
             detailsVC,
             animated: true

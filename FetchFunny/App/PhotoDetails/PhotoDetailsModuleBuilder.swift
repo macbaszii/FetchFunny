@@ -9,11 +9,13 @@
 import UIKit
 
 protocol PhotoDetailsModuleBuildable {
-    func build(with photo: InstagramPhoto) -> UIViewController
+    func build(with photo: InstagramPhoto,
+    imageViewURLLoadable: ImageViewURLLoadable) -> UIViewController
 }
 
 final class PhotoDetailsModuleBuilder: PhotoDetailsModuleBuildable {
-    func build(with photo: InstagramPhoto) -> UIViewController {
+    func build(with photo: InstagramPhoto,
+               imageViewURLLoadable: ImageViewURLLoadable) -> UIViewController {
         guard let viewController = try? PhotoDetailsViewController.loadFromNib() else {
             fatalError("Couldn't load PhotoDetailsViewController from nib file")
         }
@@ -23,6 +25,8 @@ final class PhotoDetailsModuleBuilder: PhotoDetailsModuleBuildable {
         )
 
         viewController.output = presenter
+        viewController.imageViewURLLoadable = imageViewURLLoadable
+
         presenter.view = viewController
 
         return viewController

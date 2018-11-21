@@ -86,6 +86,8 @@ extension PhotosViewController: UICollectionViewDataSource,
             for: indexPath
         ) as! PhotoCell
 
+        cell.imageViewURLLoadable = ImageViewURLLoadableImplementation()
+
         let currentPhoto = dataSource?.photo(at: indexPath)
         let viewModel = PhotoCellViewModel(
             urlString: currentPhoto?.multiResolutionImage.thumbnail.url ?? ""
