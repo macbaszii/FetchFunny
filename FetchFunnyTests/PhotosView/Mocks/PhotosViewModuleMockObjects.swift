@@ -33,6 +33,10 @@ final class MockPhotosViewOutput: PhotosViewOutput, MockInvocable {
     func tapPhoto(at indexPath: IndexPath) {
         invocations.append(.tapPhoto(indexPath: indexPath))
     }
+
+    func logoutButtonTapped() {
+
+    }
 }
 
 final class MockPhotosViewInput: PhotosViewInput, MockInvocable {
@@ -73,6 +77,7 @@ final class MockPhotosViewInteractorInput: PhotosViewInteractorInput, MockInvoca
     enum Invocation: MockInvocationEnum {
         case loadMyPhotos
         case loadPhotos(string: String)
+        case logout
     }
 
     func loadMyPhotos() {
@@ -81,6 +86,10 @@ final class MockPhotosViewInteractorInput: PhotosViewInteractorInput, MockInvoca
 
     func loadPhotos(with string: String) {
         invocations.append(.loadPhotos(string: string))
+    }
+
+    func logout() {
+        invocations.append(.logout)
     }
 }
 
@@ -120,6 +129,7 @@ final class MockPhotosViewInteractorOutput: PhotosViewInteractorOutput, MockInvo
     enum Invocation: MockInvocationEnum {
         case didReceivePhotos(photos: [InstagramPhoto])
         case didReceiveErrorRequest(errorMessage: String)
+        case didClearAccessToken
     }
 
     func didReceivePhotos(_ photos: [InstagramPhoto]) {
@@ -128,6 +138,10 @@ final class MockPhotosViewInteractorOutput: PhotosViewInteractorOutput, MockInvo
 
     func didReceiveErrorRequest(errorMessage: String) {
         invocations.append(.didReceiveErrorRequest(errorMessage: errorMessage))
+    }
+
+    func didClearAccessToken() {
+        invocations.append(.didClearAccessToken)
     }
 }
 
@@ -139,7 +153,8 @@ final class MockInstagramManager: InstagramManager, MockInvocable {
         case autorizationEndpointURL
         case extractAccessToken(url: URL)
         case loadMyRecentPhotos(photosModuleInput: PhotosViewModuleInput?)
-
+        case clearAccessToken
+        case clearInstagramCookie
     }
 
     let expectedReturnedURL = URL(string: "https://www.google.com")!
@@ -154,7 +169,7 @@ final class MockInstagramManager: InstagramManager, MockInvocable {
         return expectedReturnedURL
     }
 
-    func extractAccessToken(from url: URL) -> String {
+    func extractAccessToken(from url: URL) -> String? {
         invocations.append(.extractAccessToken(url: url))
         return expectedErrorMessage
     }
@@ -162,6 +177,15 @@ final class MockInstagramManager: InstagramManager, MockInvocable {
     func loadMyRecentPhotos(photosModuleInput: PhotosViewModuleInput?) {
         invocations.append(.loadMyRecentPhotos(photosModuleInput: photosModuleInput))
     }
+
+    func clearAccessToken() {
+        invocations.append(.clearAccessToken)
+    }
+
+    func clearInstagramCookie() {
+        invocations.append(.clearInstagramCookie)
+    }
+
 }
 
 final class MockPhotoDetailsModuleBuilder: PhotoDetailsModuleBuildable, MockInvocable {
