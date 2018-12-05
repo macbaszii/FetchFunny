@@ -10,7 +10,7 @@ import UIKit
 
 final class InstagramLoginPresenter: InstagramLoginViewOutput,
                                      InstagramLoginInteractorOutput {
-    var view: InstagramLoginViewInput?
+    weak var view: InstagramLoginViewInput?
     var router: InstagramLoginRouterInput?
     var interactor: InstagramLoginInteractorInput?
 
