@@ -11,7 +11,7 @@ import UIKit
 final class PhotosViewRouter: PhotosViewRouterInput {
     let detailsBuilder: PhotoDetailsModuleBuildable
 
-    var viewController: UIViewController?
+    weak var viewController: UIViewController?
 
     init(detailsBuilder: PhotoDetailsModuleBuildable = PhotoDetailsModuleBuilder()) {
         self.detailsBuilder = detailsBuilder
