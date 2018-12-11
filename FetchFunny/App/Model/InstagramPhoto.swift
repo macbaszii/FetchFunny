@@ -49,7 +49,7 @@ struct InstagramPhoto: Codable {
     let id: String
     let type: String
     let user: PhotoUser
-    let caption: PhotoCaption
+    let caption: PhotoCaption?
     let multiResolutionImage: MultiResolutionImage
 
     enum CodingKeys: String, CodingKey {

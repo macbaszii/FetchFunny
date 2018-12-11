@@ -18,7 +18,7 @@ final class PhotoDetailsViewPresenter: PhotoDetailsViewOutput {
     }
 
     func viewIsReady() {
-        view?.setCaption(photo.caption.text)
+        view?.setCaption(photo.caption?.text ?? "No caption")
 
         guard let imageURL = URL(string: photo.multiResolutionImage.standardResolution.url) else { return }
 

@@ -12,7 +12,7 @@ final class InstagramLoginInteractor: InstagramLoginInteractorInput {
     let instagramManager: InstagramManager
     let keychain: KeychainManager
 
-    var output: InstagramLoginInteractorOutput?
+    weak var output: InstagramLoginInteractorOutput?
 
     init(instagramManager: InstagramManager,
          keychain: KeychainManager) {

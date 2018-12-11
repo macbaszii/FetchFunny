@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol InstagramLoginViewInput {
+protocol InstagramLoginViewInput: class {
 }
 
 protocol InstagramLoginViewOutput {
@@ -21,7 +21,7 @@ protocol InstagramLoginInteractorInput {
     func storeAccessToken(from url: URL)
 }
 
-protocol InstagramLoginInteractorOutput {
+protocol InstagramLoginInteractorOutput: class {
     func didReceiveAuthorizationURL(_ url: URL)
     func didStoreAccessToken()
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 final class InstagramLoginRouter: InstagramLoginRouterInput {
-    var viewController: UIViewController?
+    weak var viewController: UIViewController?
 
     func presentAuthorizationScreen(with url: URL,
                                     webViewDelegate: WebViewControllerDelegate) {
